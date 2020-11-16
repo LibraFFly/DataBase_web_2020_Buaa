@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% comment %}显示来自views.py的字典{% endcomment %}
+{% if test_list %}
+    <ul>
+    {% for question in test_list %}
+        <li><a href="index/page1/">{{ question }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+</body>
+</html>
