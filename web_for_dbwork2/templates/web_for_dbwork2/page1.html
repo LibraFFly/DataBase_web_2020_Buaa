@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>page1</title>
 </head>
 <body>
+
+    {% if text_list %}
+        {% for item in text_list %}
+            <li>{{ item }}</li>
+        {%  endfor %}
+    {% endif %}
 
 </body>
 </html>

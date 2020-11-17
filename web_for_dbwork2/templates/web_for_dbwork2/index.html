@@ -5,17 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'web_for_dbwork2/style.css' %}">
 {% comment %}显示来自views.py的字典{% endcomment %}
 {% if test_list %}
     <ul>
-    {% for question in test_list %}
-        <li><a href="index/page1/">{{ question }}</a></li>
+    {% for item in test_list %}
+{#        <li><a href="page1/">{{ question }}</a></li>#}
+
+         <li><a href="{% url 'page1_name' %}">{{ item }}</a></li>
+
     {% endfor %}
     </ul>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
 
+    <li><a href="{% url 'page2_name' %}">click here to page_2</a></li>
 </body>
 </html>
