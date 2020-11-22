@@ -1,26 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>index</title>
 </head>
+
 <body>
+
+{#继承模板#}
+{% extends "web_for_dbwork2/base.html" %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'web_for_dbwork2/style.css' %}">
-{% comment %}显示来自views.py的字典{% endcomment %}
-{% if test_list %}
-    <ul>
-    {% for item in test_list %}
-{#        <li><a href="page1/">{{ question }}</a></li>#}
+{% load bootstrap3 %}
 
-         <li><a href="{% url 'page1_name' %}">{{ item }}</a></li>
+{% block content %}
+<div class="container-md">
 
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+        <div class="jumbotron">
+            <h3 class="display-4">欢迎来到——航亦有道</h3>
+            <p class="lead">北航学生的学习生活推荐系统</p>
+            <hr class="my-4">
 
-    <li><a href="{% url 'page2_name' %}">click here to page_2</a></li>
+            {% if user.is_authenticated %}
+                <p>欢迎您{{ user.username }}, 您可以从下面的板块中开始北航的生活学习探索</p>
+            {% else %}
+                <p>您尚未登录本系统，请先登录</p>
+                <a class="btn btn-primary btn-lg" href="{% url 'users:login' %}" role="button">点此登录</a>
+            {% endif %}
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div class="container">
+                    <div class="card" style="width: 18rem;">
+                      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606032724347&di=7a5e8adcc50cfe056bf0a05d56afd3e5&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201510%2F20%2F20151020195211_hTCFE.jpeg" height="160" class="card-img-top" alt="美食">
+                      <div class="card-body">
+                        <h5 class="card-title">北航美食</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">即刻探索</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                 <div class="container">
+                    <div class="card" style="width: 18rem;">
+                      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606032909443&di=9454c6d0ca7027b7d1d0ac1259f22045&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F16%2F08%2F15%2F1557b1756f86a34.jpg%2521%2Ffwfh%2F804x785%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue" height="160" class="card-img-top" alt="美食">
+                      <div class="card-body">
+                        <h5 class="card-title">北航学习</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">即刻探索</a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm">
+                 <div class="container">
+                    <div class="card" style="width: 18rem;">
+                      <img src="http://n.sinaimg.cn/sinacn21/102/w1600h902/20181104/13b5-hnknmqw9003310.jpg" height="160" class="card-img-top" alt="美食">
+                      <div class="card-body">
+                        <h5 class="card-title">北航健身</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">即刻探索</a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-sm">
+
+            </div>
+        </div>
+
+    <div class="container">
+
+    </div>
+
+
+</div>
+
+<hr color="gold">
+<center>
+<font color='gray' size='2'>
+版权所有&copyWanhaoZhang |地址：北京市海淀区学院路37号 |邮编：100019 |反馈意见：zhangwanhao@buaa.edu.cn 
+</font>
+</center>
+{% endblock content %}
+
+
 </body>
 </html>

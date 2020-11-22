@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #
+     'bootstrap3',
      'web_for_dbwork2',
+     'users',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +123,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = {
-#     os.path.join(BASE_DIR, "static"),
-# }
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")  # 即静态文件存放在 BASE_DIR/static 下（和manage.py同级目录下），注意BASE_DIR指django工程的绝对路径
+]
+
+# django-bootstrap3设置
+BOOTSTRAP3 = {
+    'include_jquery': True,
+}

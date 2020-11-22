@@ -12,9 +12,12 @@ from django.urls import path
 
 from web_for_dbwork2 import views
 
+app_name="web_for_dbwork2"
+
 urlpatterns = [
     path('index/', views.index, name='index'),
     path('page1/', views.page1, name='page1_name'),
-    path('page2/', views.page2, name='page2_name')
-
+    path('page2/', views.page2, name='page2_name'),
+    path('login/', views.login, name="login"),
+    path('register/',views.register, name="register"),
 ]

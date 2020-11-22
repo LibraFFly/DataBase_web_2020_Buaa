@@ -5,6 +5,9 @@
     <title>page1</title>
 </head>
 <body>
+{% extends "web_for_dbwork2/base.html" %}
+
+{% block content %}
 
     {% if text_list %}
         {% for item in text_list %}
@@ -12,5 +15,6 @@
         {%  endfor %}
     {% endif %}
 
+{% endblock content %}
 </body>
 </html>

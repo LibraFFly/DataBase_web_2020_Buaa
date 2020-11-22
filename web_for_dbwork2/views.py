@@ -19,3 +19,10 @@ def page2(request):
     # 获取当前时间
     now = datetime.datetime.now()
     return render(request, 'web_for_dbwork2/page2.html', {"time_now": now})
+
+
+def login(request):
+    return render(request, 'web_for_dbwork2/login.html')
+
+def register(request):
+    return render(request, 'web_for_dbwork2/register.html')

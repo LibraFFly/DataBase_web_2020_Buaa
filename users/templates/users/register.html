@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+{% extends "web_for_dbwork2/base.html" %}
+
+{% block content %}
+
+  <form method="post" action="{% url 'users:register' %}" class="form">
+    {% csrf_token %}
+{#      怎么修改？？#}
+        {{ form.as_p }}
+
+    <button name="submit" class="btn btn-primary">register</button>
+    <input type="hidden" name="next" value="{% url 'web_for_dbwork2:index' %}" />
+
+  </form>
+
+{% endblock content %}
+
+</body>
+</html>
