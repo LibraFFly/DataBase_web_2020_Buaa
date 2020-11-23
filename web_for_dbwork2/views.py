@@ -26,3 +26,6 @@ def login(request):
 
 def register(request):
     return render(request, 'web_for_dbwork2/register.html')
+
+def major(request):
+    return render(request, 'web_for_dbwork2/major.html')

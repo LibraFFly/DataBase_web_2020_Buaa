@@ -53,6 +53,7 @@
           <li class="breadcrumb-item"><a href="{% url 'web_for_dbwork2:index' %}">首页</a></li>
           <li class="breadcrumb-item"><a href="{% url 'web_for_dbwork2:page1_name' %}">page1</a></li>
           <li class="breadcrumb-item"><a href="{% url 'web_for_dbwork2:page2_name' %}">page2</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'web_for_dbwork2:major' %}">课程查询</a></li>
           <!-- <li class="breadcrumb-item active" aria-current="page">Data</li> -->
             {% if user.is_authenticated %}
               <li class="breadcrumb-item"><a  >Hello! {{ user.username }}</a></li>
@@ -73,7 +74,13 @@
         {% block content %}
         {% endblock%}
     </div>
+
+
+
 </div> <!-- /container -->
+
+<div style="height: 10px"></div>
+{#<div style="position:fixed; bottom:0px; width:100%; text-align:center;">我在最下面 啦啦啦</div>#}
 
 
   <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
