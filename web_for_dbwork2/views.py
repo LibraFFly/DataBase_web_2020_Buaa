@@ -29,3 +29,6 @@ def register(request):
 
 def major(request):
     return render(request, 'web_for_dbwork2/major.html')
+
+def route_query(request):
+    return render(request, 'web_for_dbwork2/route_query.html')

@@ -54,6 +54,7 @@
           <li class="breadcrumb-item"><a href="{% url 'web_for_dbwork2:page1_name' %}">page1</a></li>
           <li class="breadcrumb-item"><a href="{% url 'web_for_dbwork2:page2_name' %}">page2</a></li>
           <li class="breadcrumb-item"><a href="{% url 'web_for_dbwork2:major' %}">课程查询</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'web_for_dbwork2:route_query' %}">路线查询</a></li>
           <!-- <li class="breadcrumb-item active" aria-current="page">Data</li> -->
             {% if user.is_authenticated %}
               <li class="breadcrumb-item"><a  >Hello! {{ user.username }}</a></li>
