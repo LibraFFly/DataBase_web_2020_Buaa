@@ -8,8 +8,150 @@
 {% extends "web_for_dbwork2/base.html" %}
 
 {% block content %}
+    <div class="container-md">
+
+      <div class="jumbotron">
+        <div class="container">
+            <h3>课程查询</h3>
+            <br>
+            <p>输入您想要查询的专业，将为您检索该专业的必修课程</p>
+            <hr class="my-4">
+          <form class="form-horizontal" role="form">
+            <div class="row">
+                <div class="col-lg">
+                    <div class="form-group">
+{#                      <label for="firstname" class="col-sm-2 control-label">要查询的专业名</label>#}
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="addI" placeholder="请输入要查询的专业名">
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">查询</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </form>
+        </div>
+    </div>
+        <div class="card">
+          <div class="card-body text-info">
+            查询信息如下：
+          </div>
+        </div>
+        <div style="height: 10px;">
+
+        </div>
+
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <h5 class="card-header">计算机组成原理</h5>
+      <div class="card-body">
+        {% comment %}<h5 class="card-title">Special title treatment</h5>{% endcomment %}
+        <p class="card-text">
+            计算机组成原理是北航计算机科学与技术系经典课程，该课程由高晓鹏副院长于2016年改革后...
+        </p>
+        <!-- 按钮：用于打开模态框 -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#co">
+            了解更多课程信息
+          </button>
+
+          <!-- 模态框 -->
+          <div class="modal fade" id="co">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                  <h4 class="modal-title">计算机成原理</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <h6>课程资源：</h6>
+                    <p>
+                        mooc，《数字系统设计》
+                    </p>
+                    <br>
+
+                    <h6>授课教师：</h6>
+                    <p>
+                        高晓鹏、xlm、njw
+                    </p>
+                    <br>
+
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
 
 
+    {% comment %}<div style="height: 10px"></div>{% endcomment %}
+
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <h5 class="card-header">操作系统课程设计</h5>
+      <div class="card-body">
+
+        <p class="card-text">
+            操作系统课程设计，同面向对象、计算机组成课程设计并称“北航计院三剑客”，让历届计员学子痛并快乐着...
+        </p>
+
+          <!-- 按钮：用于打开模态框 -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#os">
+            了解更多课程信息
+          </button>
+
+          <!-- 模态框 -->
+          <div class="modal fade" id="os">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                  <h4 class="modal-title">操作系统课程设计</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                  <h6>课程资源：</h6>
+                    <p>
+                        mooc，《现代操作系统》
+                    </p>
+                    <br>
+
+                    <h6>授课教师：</h6>
+                    <p>
+                        hjf、zwh、fwt
+                    </p>
+                    <br>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+    </div>
 
 {% endblock content %}
 </body>

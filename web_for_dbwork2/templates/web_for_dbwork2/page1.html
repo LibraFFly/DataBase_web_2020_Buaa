@@ -9,14 +9,11 @@
 
 {% block content %}
 
-    {% if text_list %}
+{% if text_list %}
         {% for item in text_list %}
             <li>{{ item }}</li>
         {%  endfor %}
     {% endif %}
-
-
-
 <div class="container">
   <h2>标题、文本和链接</h2>
   <div class="card">
@@ -28,8 +25,6 @@
     </div>
   </div>
 </div>
-
-
 <div class="container">
 
   <h2>模态框实例</h2>
@@ -69,7 +64,10 @@
   <a href="#" title="取消弹出框" data-toggle="popover" data-trigger="focus" data-content="点击文档的其他地方关闭我">点我</a>
 </div>
 
- {% endblock content %}
+    <div id="div1" >
+	    <img class="rounded-circle align-content-end" alt="Cinque Terre" src="../../static/web_for_dbwork2/images/book1.jpg" />
+	</div>
 
+{% endblock content %}
 </body>
 </html>

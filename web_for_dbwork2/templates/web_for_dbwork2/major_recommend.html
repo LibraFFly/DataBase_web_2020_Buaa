@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>major_recommend</title>
+
 </head>
 <body>
 {% extends "web_for_dbwork2/base.html" %}
@@ -27,7 +28,7 @@
                                               信息大类
                                             </a>
                                           </div>
-                                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                          <div id="collapseOne" class="collapse" data-parent="#accordion">
                                             <div class="card-body">
                                                 <div class="radio">
                                                   <label><input type="radio" name="optradio">计算机科学技术</label>
@@ -116,9 +117,9 @@
     </div>
 
         <div class="card">
-          <div class="card-body">
-            查询信息如下：
-          </div>
+         <div class="card-body text-info">
+            查询信息如下:
+         </div>
         </div>
 
         <div style="height: 10px;">
@@ -127,6 +128,18 @@
 
     </div>
 
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <h5 class="card-header">计算机科学与技术：BUAA最好的专业</h5>
+      <div class="card-body ">
+          <h5 class="card-title">作者: <kbd>hjf</kbd> </h5>
+        <p class="card-text">
+            计算机专业是指计算机硬件与软件相结合、面向系统、更偏向应用的宽口径专业。
+            通过基础教学与专业训练，培养基础知识扎实、知识面宽、工程实践能力强，具有开拓创新意识，
+            在计算机科学与技术领域从事科学研究、教育、开发和应用的高级人才。
+        </p>
+
+      </div>
+    </div>
 
 {% endblock content %}
 </body>

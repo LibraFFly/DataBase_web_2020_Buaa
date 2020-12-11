@@ -11,7 +11,7 @@
 
       <div class="jumbotron">
         <div class="container">
-            <h3>课程查询</h3>
+            <h3>专业查询</h3>
             <br>
             <p>输入您想要查询的课程，将为您检索所有包含该课程的专业</p>
             <hr class="my-4">
@@ -36,9 +36,11 @@
             </div>
           </form>
         </div>
+
+
     </div>
         <div class="card">
-          <div class="card-body">
+          <div class="card-body text-info">
             查询信息如下：
           </div>
         </div>
@@ -46,23 +48,87 @@
 
         </div>
         
-    <div class="card ">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
       <h5 class="card-header">计算机科学与技术专业</h5>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">....</p>
-        <a href="{% url 'web_for_dbwork2:page2_name' %}" class="btn btn-primary">了解更多</a>
+        <h5 class="card-title">标题</h5>
+        <p class="card-text">内容</p>
+        <!-- 按钮：用于打开模态框 -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">
+            了解更多
+          </button>
 
+          <!-- 模态框 -->
+          <div class="modal fade" id="modal1">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                  <h4 class="modal-title">计算机科学与技术专业</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <p> 计算机专业是指计算机硬件与软件相结合、面向系统、
+                        更偏向应用的宽口径专业。通过基础教学与专业训练，培养基础知识扎实、
+                        知识面宽、工程实践能力强，具有开拓创新意识，在计算机科学与技术领域从事科学研究、
+                        教育、开发和应用的高级人才。
+                    </p>
+                    <br>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
       </div>
     </div>
-    <div style="height: 10px"></div>
 
-    <div class="card">
+
+   {% comment %} <div style="height: 10px"></div>{% endcomment %}
+
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
       <h5 class="card-header">飞行器制造专业</h5>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">...</p>
-        <a href="{% url 'web_for_dbwork2:page2_name' %}" class="btn btn-primary">了解更多</a>
+        <h5 class="card-title">标题</h5>
+        <p class="card-text">内容</p>
+
+          <!-- 按钮：用于打开模态框 -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2">
+            了解更多
+          </button>
+
+          <!-- 模态框 -->
+          <div class="modal fade" id="modal2">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                  <h4 class="modal-title">飞行器制造专业</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                  模态框内容..
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
       </div>
     </div>
 
