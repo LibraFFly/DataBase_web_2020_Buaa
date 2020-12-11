@@ -36,9 +36,19 @@
                     <div class="card" style="width: 18rem;">
                       <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606032724347&di=7a5e8adcc50cfe056bf0a05d56afd3e5&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201510%2F20%2F20151020195211_hTCFE.jpeg" height="160" class="card-img-top" alt="美食">
                       <div class="card-body">
-                        <h5 class="card-title">北航美食</h5>
+                        <h5 class="card-title">专业</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="{% url 'web_for_dbwork2:major' %}" class="btn btn-primary">即刻探索</a>
+
+                          <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                              即刻探索
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="{% url 'web_for_dbwork2:major_c2m' %}">课程2专业</a>
+                              <a class="dropdown-item" href="{% url 'web_for_dbwork2:major_m2c' %}">专业2课程</a>
+                              <a class="dropdown-item" href="{% url 'web_for_dbwork2:major_recommend' %}">专业推荐</a>
+                            </div>
+                          </div>
                       </div>
                     </div>
                 </div>
@@ -49,9 +59,9 @@
                     <div class="card" style="width: 18rem;">
                       <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606032909443&di=9454c6d0ca7027b7d1d0ac1259f22045&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F16%2F08%2F15%2F1557b1756f86a34.jpg%2521%2Ffwfh%2F804x785%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue" height="160" class="card-img-top" alt="美食">
                       <div class="card-body">
-                        <h5 class="card-title">课程查询</h5>
+                        <h5 class="card-title">学习</h5>
                         <p class="card-text">您可以输入想要学习的课程名称，查询该开设该课程的院系，以及该课程的详细信息</p>
-                        <a href="{% url 'web_for_dbwork2:major' %}" class="btn btn-primary">即刻探索</a>
+                        <a href="{% url 'web_for_dbwork2:study_main' %}" class="btn btn-primary">即刻探索</a>
                       </div>
                     </div>
                 </div>
@@ -63,9 +73,9 @@
                     <div class="card" style="width: 18rem;">
                       <img src="http://n.sinaimg.cn/sinacn21/102/w1600h902/20181104/13b5-hnknmqw9003310.jpg" height="160" class="card-img-top" alt="美食">
                       <div class="card-body">
-                        <h5 class="card-title">北航健身</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">即刻探索</a>
+                          <h5 class="card-title">生活</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="{% url 'web_for_dbwork2:life' %}" class="btn btn-primary">即刻探索</a>
                       </div>
                     </div>
                 </div>

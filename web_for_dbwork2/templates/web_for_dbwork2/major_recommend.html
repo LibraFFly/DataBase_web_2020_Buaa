@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>major_recommend</title>
+</head>
+<body>
+{% extends "web_for_dbwork2/base.html" %}
+
+{% block content %}
+
+    <div class="container-sm">
+         <div class="jumbotron">
+        <div class="container">
+            <h3>专业推荐</h3>
+            <br>
+            <p>在下拉框中选择您想要查看的专业，将为您展示各个推荐帖</p>
+            <hr class="my-4">
+
+            <form>
+                    <div id="accordion">
+                              <div class="row">
+                                  <div class="col">
+                                      <div class="card">
+                                          <div class="card-header">
+                                            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                              信息大类
+                                            </a>
+                                          </div>
+                                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <div class="radio">
+                                                  <label><input type="radio" name="optradio">计算机科学技术</label>
+                                                </div>
+                                                <div class="radio">
+                                                  <label><input type="radio" name="optradio">软件工程</label>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                  </div>
+
+
+                                  <div class="col">
+                                      <div class="card">
+                                          <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                                            航空航天大类
+                                          </a>
+                                          </div>
+                                          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <div class="radio">
+                                                  <label><input type="radio" name="optradio">飞行器制造</label>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                  </div>
+
+                                      <div class="col">
+                                      <div class="card">
+                                          <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                                              理科大类
+                                            </a>
+                                          </div>
+                                          <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                              <div class="radio">
+                                                  <label><input type="radio" name="optradio">数学</label>
+                                              </div>
+                                               <div class="radio">
+                                                  <label><input type="radio" name="optradio">化学</label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                  <div class="col">
+                                      <div class="card">
+                                          <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                                              文科大类
+                                            </a>
+                                          </div>
+                                          <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                              <div class="radio">
+                                                  <label><input type="radio" name="optradio">法学</label>
+                                              </div>
+                                               <div class="radio">
+                                                  <label><input type="radio" name="optradio">英语</label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+                                  <div class="col-sm">
+                                      <div class="col-sm">
+                                        <div class="form-group">
+                                          <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-primary">查询</button>
+                                          </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                    </div>
+            </form>
+
+        </div>
+    </div>
+
+        <div class="card">
+          <div class="card-body">
+            查询信息如下：
+          </div>
+        </div>
+
+        <div style="height: 10px;">
+
+        </div>
+
+    </div>
+
+
+{% endblock content %}
+</body>
+</html>

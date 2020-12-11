@@ -8,7 +8,34 @@
 {% extends "web_for_dbwork2/base.html" %}
 
 {% block content %}
+   <div class="container-md">
+       <form>
+          <div class="form-group row" >
+              <div class="col-sm">
+                  <label for="email">账户名:</label>
+                  <input type="email" class="form-control w-25" id="email" placeholder="请输入账号">
+              </div>
+          </div>
+          <div class="form-group row">
+              <div class="col">
+                <label for="pwd">密码:</label>
+                <input type="password" class="form-control w-25" id="pwd" placeholder="请输入密码">
+              </div>
+          </div>
 
+           <div class="form-group row">
+              <div class="col">
+                <label for="pwd">请确认密码:</label>
+                <input type="password" class="form-control w-25" id="again" placeholder="请再次输入密码">
+              </div>
+          </div>
+
+           <br>
+          <button type="submit" class="btn btn-primary">注册</button>
+        </form>
+   </div>
+
+{% comment %}
   <form method="post" action="{% url 'users:register' %}" class="form">
     {% csrf_token %}
 {#      怎么修改？？#}
@@ -18,6 +45,7 @@
     <input type="hidden" name="next" value="{% url 'web_for_dbwork2:index' %}" />
 
   </form>
+{% endcomment %}
 
 {% endblock content %}
 
