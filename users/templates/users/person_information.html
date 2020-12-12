@@ -5,6 +5,82 @@
     <title>person_information</title>
 </head>
 <body>
+{% extends 'web_for_dbwork2/base.html' %}
+{% block header %}
 
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width:400px">
+    <img class="card-img-top" src="https://static.runoob.com/images/mix/img_avatar.png" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">HJF</h4>
+      <p class="card-text">2020年获得“北航吴彦祖”称号，北航校草、合唱队领唱、长笛社创始人、WeGame公司创始人、风靡全球的WeGay游戏设计师</p>
+
+    </div>
+  </div>
+        </div>
+
+        <div class="col">
+                <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+          我的关注
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse show" >
+        <div class="card-body">
+          <li>
+              zwh
+          </li>
+
+            <li>
+              fwt
+          </li>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+        我的收藏
+      </a>
+      </div>
+      <div id="collapseTwo" class="collapse" >
+        <div class="card-body">
+            <li>
+                <a href="{% url 'web_for_dbwork2:study_router' %}">Cpp学习路线1</a>
+            </li>
+
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+          我的发布
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" >
+        <div class="card-body">
+            <li>
+                 <a href="{% url 'web_for_dbwork2:study_router' %}">Cpp学习路线1</a>
+            </li>
+
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
 </body>
 </html>

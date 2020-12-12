@@ -33,7 +33,7 @@
 			transition: all 0.6s;
 		}
 		#div1 img:hover{
-			transform: scale(1.5);
+			transform: scale(1.2);
 		}
 
 
@@ -66,7 +66,7 @@
     <li class="nav-item">
       <a class="nav-link"  href="{% url 'web_for_dbwork2:study_main' %}">学习</a>
     </li>
-  <li class="nav-item">
+    <li class="nav-item">
       <a class="nav-link" href="{% url 'web_for_dbwork2:life' %}">生活</a>
     </li>
 
@@ -89,6 +89,10 @@
               <li class="nav-item"><a class="nav-link" href="{% url 'users:register' %}">注册</a></li>
               <li class="nav-item"><a class="nav-link"  href="{% url 'users:login' %}">登录</a></li>
       {% endif %}
+      <li class="nav-item">
+       <a class="nav-link" href="{% url 'users:person_information' %}">个人信息</a>
+      </li>
+
   </ul>
 </nav>
 <br>
@@ -130,5 +134,98 @@
   interval: 5000
 })
  </script>
+
+{% comment %}使用qunee绘制线路图{% endcomment %}
+<script src="http://demo.qunee.com/lib/qunee-min.js"></script>
+
+{% comment %}研究方向网状图{% endcomment %}
+<script>
+    var graph = new Q.Graph("study_direction");
+
+    function createNode(name, from){
+        var node = graph.createNode(name);
+        node.image = Q.Shapes.getShape(Q.Consts.SHAPE_CIRCLE, 40, 40);
+        if(from){
+            graph.createEdge(from, node);
+        }
+        return node;
+    }
+    var root = createNode("R");
+    var i = 0;
+    while(i++ < 3){
+        var node = createNode("" + i, root);
+        var j = 0;
+        while(j++ < 2){
+            createNode("" + i + "-" + j, node);
+        }
+    }
+
+    var layouter = new Q.BalloonLayouter(graph);
+    layouter.radiusMode = Q.Consts.RADIUS_MODE_UNIFORM;
+    layouter.radius = 100;
+    layouter.startAngle = Math.PI / 4;
+    layouter.doLayout({callback: function(){
+        graph.zoomToOverview();
+    }});
+</script>
+
+
+<script>
+
+    var graph = new Q.Graph("canvas");
+
+    // 创建结点的函数
+    function createNode(name, from){
+        var node = graph.createNode(name);
+        if(from){
+            graph.createEdge(from, node);
+        }
+        return node;
+    }
+
+    // 根节点
+    var label;
+    var root = createNode("c++学习线路");
+    root.parentChildrenDirection = Q.Consts.DIRECTION_BOTTOM;
+    var i = 0;
+    while(i++ < 2){
+
+        switch (i) {
+            case 1: label = "C++ 书籍";
+                    break;
+            case 2: label ="C++ 课程";
+                    break;
+            default: label = "null";
+        }
+        // 创建子子节点
+        var node = createNode(label, root);
+        node.parentChildrenDirection = Q.Consts.DIRECTION_RIGHT;
+        node.layoutType = Q.Consts.LAYOUT_TYPE_EVEN_VERTICAL;
+        var j = 0;
+        while(j++ < 3){
+
+            switch (i) {
+                case 1: label = "C++balabal";
+                        break;
+                case 2: label ="C++balaba";
+                        break;
+                default: label = "null";
+            }
+            createNode(label, node);
+        }
+    }
+
+    // 画树状图
+    var layouter = new Q.TreeLayouter(graph);
+    layouter.layoutType = Q.Consts.LAYOUT_TYPE_EVEN_HORIZONTAL;
+    layouter.doLayout({callback: function(){
+        graph.zoomToOverview();
+    }});
+</script>
+
+
+
+
+
 </body>
 </html>

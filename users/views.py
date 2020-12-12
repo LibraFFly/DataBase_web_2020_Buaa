@@ -22,6 +22,9 @@ def login(request):
 def register(request):
     return render(request, 'users/register.html')
 
+
+def person_informarion(request):
+    return render(request, 'users/person_information.html')
     # if request.method != 'POST':
     #     # Display blank registration form.
     #     form = UserCreationForm()
