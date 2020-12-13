@@ -54,23 +54,22 @@
 
 <div class="container-md">
 
-<nav class="navbar navbar-expand-sm bg-white navbar-gray">
-  <!-- Brand -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="{% url 'web_for_dbwork2:index' %}">航道首页</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'web_for_dbwork2:page1_name' %}">page1</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link"  href="{% url 'web_for_dbwork2:study_main' %}">学习</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'web_for_dbwork2:life' %}">生活</a>
-    </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link"  href="{% url 'web_for_dbwork2:study_main' %}">学习</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'web_for_dbwork2:life' %}">生活</a>
+      </li>
 
-    <!-- Dropdown -->
+      <!-- Dropdown -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         专业
@@ -82,19 +81,25 @@
       </div>
     </li>
 
-      {% if user.is_authenticated %}
-              <li class="nav-item float-lg-right "><a class="nav-link" >Hello! {{ user.username }}</a></li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'users:logout' %}">注销</a></li>
-      {% else %}
-              <li class="nav-item"><a class="nav-link" href="{% url 'users:register' %}">注册</a></li>
-              <li class="nav-item"><a class="nav-link"  href="{% url 'users:login' %}">登录</a></li>
-      {% endif %}
-      <li class="nav-item">
-       <a class="nav-link" href="{% url 'users:person_information' %}">个人信息</a>
-      </li>
-
-  </ul>
+    </ul>
+  <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav mr-auto  my-2 my-lg-0">
+                {% if user.is_authenticated %}
+                  <li class="nav-item float-lg-right "><a class="nav-link" >Hello! {{ user.username }}</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'users:logout' %}">注销</a></li>
+              {% else %}
+                      <li class="nav-item"><a class="nav-link" href="{% url 'users:register' %}">注册</a></li>
+                      <li class="nav-item"><a class="nav-link"  href="{% url 'users:login' %}">登录</a></li>
+              {% endif %}
+              <li class="nav-item">
+               <a class="nav-link" href="{% url 'users:person_information' %}">个人信息</a>
+              </li>
+      </ul>
+  </form>
+  
+  </div>
 </nav>
+
 
 <br>
 
