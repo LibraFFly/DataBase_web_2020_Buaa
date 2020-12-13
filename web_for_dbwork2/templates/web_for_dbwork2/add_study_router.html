@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add_study_router</title>
+</head>
+<body>
+{% extends "web_for_dbwork2/base.html" %}
+{% block content %}
+
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+             <h3>
+                &nbsp;<a href="{% url 'web_for_dbwork2:study_main'  %}">学习路线</a>
+              </h3>
+              <form>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                 <textarea class="form-control" rows="1" id="router_title" placeholder="请输入路线标题"></textarea>
+                            </div>
+                            <div class="col">
+                                 <textarea class="form-control" rows="1" id="node_number" placeholder="请输入结点个数"></textarea>
+
+                            </div>
+                        </div>
+                        <br>
+                        路线详情：
+                        &nbsp;<textarea class="form-control" rows="5" id="comment" placeholder="请输入路线信息，结点之间用&分割"></textarea>
+                    </div>
+                     &nbsp;<button type="button" class="btn btn-outline-primary">发帖</button>
+               </form>
+          </div>
+        </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>

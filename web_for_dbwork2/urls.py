@@ -27,6 +27,14 @@ urlpatterns = [
     #生活
     path('life/', views.life, name='life'),
 
+    # 专业推荐发帖
+    path('add_major_recommend/', views.add_major_recommend, name='add_major_recommend'),
+
+    # 生活发帖
+    path('add_life_topic/', views.add_life_topic, name='add_life_topic'),
+
+    # 学习路线发帖
+    path('add_study_router/', views.add_study_router, name='add_study_router'),
 # 测试用
     path('page1/', views.page1, name='page1_name'),
     path('page2/', views.page2, name='page2_name'),

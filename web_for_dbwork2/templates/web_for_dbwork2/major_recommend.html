@@ -13,7 +13,8 @@
     <div class="container-sm">
          <div class="jumbotron">
         <div class="container">
-            <h3>专业推荐</h3>
+            <h3>专业推荐<a href="{% url 'web_for_dbwork2:add_major_recommend' %}" class="btn btn-warning" role="button">我要发帖</a>
+            </h3>
             <br>
             <p>在下拉框中选择您想要查看的专业，将为您展示各个推荐帖</p>
             <hr class="my-4">
@@ -117,7 +118,9 @@
                                         <div class="form-group">
                                           <div class="col-sm-offset-2 col-sm-10">
                                             <button type="submit" class="btn btn-primary">查询</button>
+
                                           </div>
+
                                         </div>
                                     </div>
                                   </div>

@@ -32,6 +32,24 @@ def study_router(request):
 def life(request):
     return render(request, 'web_for_dbwork2/life.html')
 
+
+# 添加帖子
+
+# 生活帖子
+def add_life_topic(request):
+    return render(request, 'web_for_dbwork2/add_life_topic.html')
+
+
+# 专业推荐帖子
+def add_major_recommend(request):
+    return render(request,'web_for_dbwork2/add_major_recommend.html')
+
+# 学习路线添加
+def add_study_router(request):
+    return render(request, 'web_for_dbwork2/add_study_router.html')
+
+
+
 #  测试用
 def page1(request):
     text_list = ["hello", "word"]
