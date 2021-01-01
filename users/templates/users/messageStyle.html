@@ -1,0 +1,31 @@
+{% if messages %}
+    {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+            <div class="alert alert-info alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                【信息】：{{ message }}
+            </div>
+        {% endif %}
+
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <div class="alert alert-success alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                【成功】：{{ message }}
+            </div>
+        {% endif %}
+
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+            <div class="alert alert-warning alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                【警告】：{{ message }}
+            </div>
+        {% endif %}
+
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <div class="alert alert-danger alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                【错误】：{{ message }}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}

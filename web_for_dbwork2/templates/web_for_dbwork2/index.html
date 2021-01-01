@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+
+{#继承模板#}
+{% extends "web_for_dbwork2/base.html" %}
+{% load static %}
+{#{% load bootstrap3 %}#}
+
+{% block content %}
+
+    <!--消息弹出-->
+    {% include 'users/messageStyle.html' %}
+
+
+<div class="container-md">
+
+        <div class="jumbotron">
+            <h3 class="display-4">欢迎来到——航亦有道</h3>
+            <p class="lead">北航学生的学习生活推荐系统</p>
+            <hr class="my-4">
+
+            {% if request.session.is_authenticated %}
+                <p>欢迎您{{request.session.login_name}}, 您可以从下面的板块中开始北航的生活学习探索</p>
+            {% else %}
+                <p>您尚未登录本系统，请先登录</p>
+                <a class="btn btn-primary btn-lg" href="{% url 'users:login' %}" role="button">点此登录</a>
+            {% endif %}
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div class="container">
+                    <div class="card" style="width: 18rem;">
+                      <img src="../../static/web_for_dbwork2/images/yuhui.png" height="160" class="card-img-top" alt="美食">
+                      <div class="card-body">
+                        <h5 class="card-title">专业</h5>
+                        <p class="card-text">这里有关于北航专业的一切信息，还有各路达人发布的热门帖子，快来探索你感兴趣的话题吧！</p>
+
+                          <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                              即刻探索
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="{% url 'web_for_dbwork2:major_c2m' %}">课程2专业</a>
+                              <a class="dropdown-item" href="{% url 'web_for_dbwork2:major_m2c' %}">专业2课程</a>
+                              <a class="dropdown-item" href="{% url 'web_for_dbwork2:major_recommend' %}">专业推荐</a>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                 <div class="container">
+                    <div class="card" style="width: 18rem;">
+                      <img src="../../static/web_for_dbwork2/images/学习.png" height="160" class="card-img-top" alt="美食">
+                      <div class="card-body">
+                        <h5 class="card-title">学习</h5>
+                        <p class="card-text">您可以输入想要学习的课程名称，查询该开设该课程的院系，以及该课程的详细信息</p>
+                        <a href="{% url 'web_for_dbwork2:study_main' %}" class="btn btn-primary">即刻探索</a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm">
+                 <div class="container">
+                    <div class="card" style="width: 18rem;">
+                      <img src="../../static/web_for_dbwork2/images/生活.jpg" height="160" class="card-img-top" alt="美食">
+                      <div class="card-body">
+                          <h5 class="card-title">生活</h5>
+                          <p class="card-text">在北航，你不仅能收获知识，更能感受大学生活的美好，十二道航味、航空博物馆...快来探索更多！</p>
+                          <a href="{% url 'web_for_dbwork2:life' %}" class="btn btn-primary">即刻探索</a>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    <div class="container">
+
+    </div>
+
+
+</div>
+
+    <div>
+        <hr color="gold">
+        <center>
+            <font color='black' size='2'>
+            版权所有@hjf & fwt & zwh |地址：北京市海淀区学院路37号 |邮编：100019 |反馈意见：zhangwanhao@buaa.edu.cn
+            </font>
+        </center>
+    </div>
+
+{% endblock content %}
+
+
+</body>
+</html>
