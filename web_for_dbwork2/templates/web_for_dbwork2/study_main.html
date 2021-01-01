@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>route_query</title>
+</head>
+<body>
+{% extends 'web_for_dbwork2/base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+    <div class="container-md">
+      <div class="jumbotron">
+        <div class="container">
+            <h3>学习路线查询<a href="{% url 'web_for_dbwork2:add_study_router' %}" class="btn btn-warning" role="button">我要发学习路线</a>
+            </h3>
+            <br>
+            <p>输入您想要学习的课程，将为您推荐包含该课程的学习路线</p>
+            <hr class="my-4">
+          <form class="form-horizontal" role="form" method="post" action={% url "web_for_dbwork2:study_main" %}>
+              {% csrf_token %}
+            <div class="row">
+                <div class="col-lg">
+                    <div class="form-group">
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="search_course" placeholder="请输入要查询的课程">
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">查询</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </form>
+        </div>
+    </div>
+
+        {% if has_data == 1 %}
+            <div class="card text-info ">
+              <div class="card-body">
+                所有推荐学习路线如下，点击标题名查看具体线路
+              </div>
+            </div>
+
+
+        <div style="height: 10px;">
+
+        </div>
+
+
+<!-- 这里的查询展示只是效果演示，如果有来自views的数据可以直接用两个个for循环把所有信息展示出来 -->
+
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                <a class="nav-link" href="{% url 'web_for_dbwork2:study_router' %}?route_id={{ hot_route.route_id }}"><h5 class="card-header">{{hot_route.route_name}} &nbsp<span class="badge badge-warning">推荐</span></h5></a>
+              <div class="card-body">
+                {% comment %}<h5 class="card-title">作者: <kbd>hjf</kbd> </h5>{% endcomment %}
+                 <p> <mark>发布人：</mark> <kbd>{{hot_route.user_name}}</kbd> | <mark>热度：</mark>{{ hot_route.hot }} | <mark>星标：</mark>{{ hot_route.like_num }} | <mark>观看：</mark>{{ hot_route.watch }}</p>
+                <div>
+                    <a href="{% url 'web_for_dbwork2:add_xing' %}?route_id={{ hot_route.route_id }}" class="btn btn-danger" role="button">星标</a>
+                </div>
+
+
+              </div>
+            </div>
+
+            <!-- 普通路线 -->
+            {% for route in route_list %}
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                <a class="nav-link" href="{% url 'web_for_dbwork2:study_router' %}?route_id={{ route.route_id }}"><h5 class="card-header">{{route.route_name}}</h5></a>
+{#                  <h5 class="card-header">{{ route.route_name }}</h5>#}
+                  <div class="card-body">
+                    <p> <mark>发布人：</mark> <kbd>{{route.user_name}}</kbd> | <mark>热度：</mark>{{ route.hot }} | <mark>星标：</mark>{{ route.like_num }} | <mark>观看：</mark>{{ route.watch }}</p>
+                  </div>
+                <div>
+
+                    <a href="{% url 'web_for_dbwork2:add_xing' %}?route_id={{ route.route_id }}" class="btn btn-danger" role="button">星标</a>
+
+                </div>
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+  {% comment %}  <div style="height: 10px"></div>
+{% endcomment %}
+
+   </div>
+{% endblock %}
+</body>
+</html>

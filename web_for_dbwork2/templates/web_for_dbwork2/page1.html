@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page1</title>
+</head>
+<body>
+{% extends "web_for_dbwork2/base.html" %}
+
+{% block content %}
+
+{% if text_list %}
+        {% for item in text_list %}
+            <li>{{ item }}</li>
+        {%  endfor %}
+    {% endif %}
+<div class="container">
+  <h2>标题、文本和链接</h2>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">Some example text. Some example text.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+</div>
+<div class="container">
+
+  <h2>模态框实例</h2>
+  <!-- 按钮：用于打开模态框 -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    打开模态框
+  </button>
+
+  <!-- 模态框 -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- 模态框头部 -->
+        <div class="modal-header">
+          <h4 class="modal-title">模态框头部</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- 模态框主体 -->
+        <div class="modal-body">
+          模态框内容..
+        </div>
+
+        <!-- 模态框底部 -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="container">
+  <h3>弹出框实例</h3> <br>
+  <a href="#" title="取消弹出框" data-toggle="popover" data-trigger="focus" data-content="点击文档的其他地方关闭我">点我</a>
+</div>
+
+     <div id="div1" >
+	    <img class="rounded-circle align-content-end" alt="Cinque Terre" src="../../static/web_for_dbwork2/images/book1.jpg" />
+	</div>
+     <button type="button" class="btn btn-primary btn-arrow-left">箭头向左的按钮</button>
+     <button type="button" class="btn btn-success btn-arrow-right">箭头向右的按钮</button>
+     <canvas id="tutorial" width="600" height="700"></canvas>
+
+ <div style="height: 500px; width: 100%; align-content: center" id="canvas"></div>
+
+
+
+{% endblock content %}
+
+
+</body>
+</html>
